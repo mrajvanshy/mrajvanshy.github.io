@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="angular.min.js"></script>
+<script src="ripple-lib/build/ripple-0.7.32-min.js"></script>
+<script type="text/javascript" src="mainController.js"></script>
+
+<meta charset=utf-8 />
+<style type="text/css">
+body{font-family:Arial, Helvetica, sans-serif;}
+#container{
+	border:5px solid #3372AD;
+	width:1000px;
+	margin:0 auto;
+	padding:10px;
+}
+#chatLog{
+	padding:5px;
+	border:1px solid #3372AD;	
+}
+#chatLog p{margin:0;}
+.event{color:#999;}
+.warning{
+	font-weight:bold;
+	color:#CCC;
+}
+#suggestions{
+	padding-top: 10px;
+}
+#header{
+	color: #3372AD;
+}
+</style>
+
+<title>Network Updates</title>
+
+</head>
+<body>
+  <div id="wrapper">
+  	<div id='content' ng-app="RippleApp" ng-controller="mainController">
+		
+  
+	  	<div id="container">
+	    
+	    	<h1 id="header"> <img alt="Ripple Logo" src="https://ripple.com/wp-content/themes/ripple/assets/img/logo.png"> 
+	    		<br>Network Updates</h1>
+	        
+	        <div id="chatLog">
+	        
+	        </div>
+	        <p id="examples"> Enter an API call to get information from the Ripple Network.
+	        	<br>
+	        	For example, try {"command": "ledger"} to get the date at which the last transaction was completed and how many transactions have been completed since you opened the connection.
+	        	<br>
+	        	Or {"command":"subscribe","id":0,"streams":["ledger"]} to get the most recent ledger hash.
+	        	<br>
+	        	Otherwise, here is a list of other ripple-lib API calls that can be called on the Ripple Network:  <a href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib APIs</a>.
+	        	The rest of the API calls will return the default objects that they are supposed to return. 
+	        </p>
+	        
+	    	<input id="text" type="text" />
+	    	{{enter}}
+	    	<br>
+	    	<br>
+	    	{{disconnect}}
+	    	<br>
+	        <button id="disconnect">Disconnect</button>
+	        <div id ="suggestions">
+	        
+	    	</div>
+
+		</div>
+
+	
+
+	</div>
+  
+  </div>
+</body>
+</html>​
